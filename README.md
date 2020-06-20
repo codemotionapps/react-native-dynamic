@@ -26,7 +26,17 @@ function Component() {
 }
 ```
 
-### `DynamicStyleSheet` and `DynamicValue`
+### `DynamicValue`
+
+A helper class meant to be used with [`DynamicStyleSheet`](#DynamicStyleSheet) and [`useDynamicValue`](#useDynamicValue). The first argument is the value to be used with a light color scheme, the second argument is the value to be used with a dark color scheme.
+
+```javascript
+import { DynamicValue } from 'react-native-dynamic'
+
+const backgroundColor = new DynamicValue('white', 'black')
+```
+
+### `DynamicStyleSheet`
 
 Just like [`StyleSheet`](https://reactnative.dev/docs/stylesheet) but with support for dynamic values.
 
