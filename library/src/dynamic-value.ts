@@ -11,11 +11,11 @@ export class DynamicValue<T> implements IDynamicValue<T> {
 
 export function useDynamicValue<T>(dynamic: IDynamicValue<T>): T
 export function useDynamicValue<T>(light: T, dark: T): T
-export function useDynamicValue<T>(light: T | DynamicValue<T>, dark?: T): T {
+export function useDynamicValue<T>(light: T | IDynamicValue<T>, dark?: T): T {
 	const mode = useColorSchemeContext()
-	if (light instanceof DynamicValue) {
-		return light[mode]
+	if (arguments.length > 1) {
+		return mode === 'dark' ? dark! : (light as T)
 	} else {
-		return mode === 'dark' ? dark! : light
+		return (light as IDynamicValue<T>)[mode]
 	}
 }
