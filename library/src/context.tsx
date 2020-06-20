@@ -16,7 +16,7 @@ interface IProps {
 
 export function ColorSchemeProvider({ children, mode }: IProps) {
 	const currentMode = useColorScheme()
-	return <ColorSchemeContext.Provider value={mode || currentMode}>{children}</ColorSchemeContext.Provider>
+	return <ColorSchemeContext.Provider value={mode || currentMode || 'light'}>{children}</ColorSchemeContext.Provider>
 }
 
 export const DarkModeProvider = ColorSchemeProvider

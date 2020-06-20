@@ -26,25 +26,6 @@ function Component() {
 }
 ```
 
-### `useColorSchemeProvider`
-
-Returns `dark` or `light`.
-
-```javascript
-import { useColorSchemeProvider } from 'react-native-dynamic'
-
-const backgroundColors = {
-	light: 'white',
-	dark: 'black',
-}
-
-function Component() {
-	const mode = useColorSchemeProvider()
-	const backgroundColor = backgroundColors[mode]
-	return <View style={{ backgroundColor }} />
-}
-```
-
 ### `DynamicStyleSheet` and `DynamicValue`
 
 Just like [`StyleSheet`](https://reactnative.dev/docs/stylesheet) but with support for dynamic values.
@@ -135,6 +116,25 @@ import { useDynamicValue } from 'react-native-dynamic'
 function Input() {
 	const placeholderColor = useDynamicValue('black', 'white')
 	return <TextInput placeholderTextColor={placeholderColor} />
+}
+```
+
+### `useColorSchemeContext`
+
+Returns `dark` or `light` but reads value from context.
+
+```javascript
+import { useColorSchemeContext } from 'react-native-dynamic'
+
+const backgroundColors = {
+	light: 'white',
+	dark: 'black',
+}
+
+function Component() {
+	const mode = useColorSchemeContext()
+	const backgroundColor = backgroundColors[mode]
+	return <View style={{ backgroundColor }} />
 }
 ```
 
