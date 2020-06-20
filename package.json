@@ -1,0 +1,31 @@
+{
+	"private": true,
+	"workspaces": {
+		"packages": [
+			"example",
+			"library"
+		],
+		"nohoist": [
+			"**/react-native",
+			"**/react-native/**",
+			"**/react",
+			"**/react/**",
+			"**/react-native-dynamic",
+			"**/react-native-dynamic/**"
+		]
+	},
+	"scripts": {
+		"example": "yarn workspace example",
+		"library": "yarn workspace library",
+		"start": "yarn workspace example start"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.10.3",
+		"@babel/runtime": "^7.10.3",
+		"@types/react-native": "^0.62.13",
+		"babel-plugin-module-resolver": "^4.0.0",
+		"metro-react-native-babel-preset": "^0.59.0",
+		"rimraf": "^3.0.2",
+		"typescript": "^3.9.5"
+	}
+}

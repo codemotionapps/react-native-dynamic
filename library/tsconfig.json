@@ -1,0 +1,14 @@
+{
+	"extends": "../tsconfig.base.json",
+	"compilerOptions": {
+		"declaration": true,
+		"incremental": true,
+		"sourceMap": true,
+		"outDir": "./dist",
+		"baseUrl": ".",
+		"paths": {
+			"react": ["../example/node_modules/react"]
+		}
+	},
+	"include": ["./src"]
+}

@@ -1,0 +1,8 @@
+*.pbxproj -text
+
+example/babel.config.js linguist-vendored=true
+example/metro.config.js linguist-vendored=true
+example/index.js linguist-vendored=true
+example/android/* linguist-vendored=true
+example/ios/* linguist-vendored=true
+Podfile linguist-vendored=true

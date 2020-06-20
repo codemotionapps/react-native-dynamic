@@ -1,0 +1,27 @@
+{
+	"name": "react-native-dynamic",
+	"version": "1.0.0-rc.1",
+	"main": "./dist/index.js",
+	"typings": "./dist/index.d.ts",
+	"repository": "git@github.com:codemotionapps/react-native-dynamic.git",
+	"author": "Dimitar Nestorov <opensource@dimitarnestorov.com> (https://dimitarnestorov.com)",
+	"homepage": "https://github.com/codemotionapps/react-native-dynamic",
+	"description": "Detect dark mode in React Native",
+	"license": "MIT",
+	"scripts": {
+		"prepublishOnly": "yarn run clean && yarn run copy-readme && yarn run build",
+		"clean": "rimraf dist",
+		"copy-readme": "cp ../README.md ./",
+		"build": "tsc",
+		"watch": "yarn run build --watch"
+	},
+	"peerDependencies": {
+		"react": "^16.11.0",
+		"react-native": "^0.62.0"
+	},
+	"dependencies": {
+		"@types/react": "*",
+		"@types/react-native": ">=0.62.0",
+		"toolkit.ts": "^0.0.2"
+	}
+}
