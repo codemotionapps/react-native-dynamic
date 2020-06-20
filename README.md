@@ -96,7 +96,7 @@ function App() {
 
 ### `useDynamicValue`
 
-Returns the appropriate value depending on the theme. You can either pass a `DynamicValue` or just two arguments.
+Returns the appropriate value depending on the theme. You can either pass a `DynamicValue`, an object containing `dark` and `light` properties, or just two arguments.
 
 ```javascript
 import { DynamicValue, useDynamicValue } from 'react-native-dynamic'
@@ -116,6 +116,26 @@ import { useDynamicValue } from 'react-native-dynamic'
 function Input() {
 	const placeholderColor = useDynamicValue('black', 'white')
 	return <TextInput placeholderTextColor={placeholderColor} />
+}
+```
+
+```javascript
+import { useDynamicValue } from 'react-native-dynamic'
+
+const datePickerConfig = {
+	light: {
+		backgroundColor: 'white',
+		color: 'black',
+	},
+	dark: {
+		backgroundColor: 'black',
+		color: 'white',
+	},
+}
+
+function CustomDatePicker() {
+	const config = useDynamicValue(datePickerConfig)
+	return <DatePicker config={config} />
 }
 ```
 
