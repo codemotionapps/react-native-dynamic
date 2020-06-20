@@ -45,12 +45,12 @@ function Component() {
 }
 ```
 
-### `DynamicStyleSheet`, `DynamicValue` and `useDynamicStyleSheet`
+### `DynamicStyleSheet` and `DynamicValue`
 
 Just like [`StyleSheet`](https://reactnative.dev/docs/stylesheet) but with support for dynamic values.
 
 ```javascript
-import { DynamicStyleSheet, DynamicValue, useDynamicStyleSheet } from 'react-native-dynamic'
+import { DynamicStyleSheet, DynamicValue, useDynamicValue } from 'react-native-dynamic'
 
 const dynamicStyles = new DynamicStyleSheet({
 	container: {
@@ -64,7 +64,7 @@ const dynamicStyles = new DynamicStyleSheet({
 })
 
 function Component() {
-	const styles = useDynamicStyleSheet(dynamicStyles)
+	const styles = useDynamicValue(dynamicStyles)
 
 	return (
 		<View style={styles.container}>

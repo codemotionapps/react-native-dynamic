@@ -3,7 +3,6 @@ import { View, Text, Image, Button } from 'react-native'
 import {
 	useDarkModeContext,
 	DynamicValue,
-	useDynamicStyleSheet,
 	DynamicStyleSheet,
 	DarkModeProvider,
 	useDynamicValue,
@@ -18,7 +17,7 @@ function Counter() {
 
 export default function App() {
 	const mode = useDarkModeContext()
-	const styles = useDynamicStyleSheet(dynamicStyles)
+	const styles = useDynamicValue(dynamicStyles)
 	const logo = useDynamicValue(require('./logoLight.png'), require('./logoDark.png'))
 
 	return (

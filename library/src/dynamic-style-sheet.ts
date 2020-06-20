@@ -1,8 +1,7 @@
 import { StyleSheet, ViewStyle, TextStyle, ImageStyle } from 'react-native'
 import { IndexedObject, ValueOf } from 'toolkit.ts'
 
-import { useColorSchemeContext } from './context'
-import { DynamicValue } from './dynamic-value'
+import { DynamicValue, useDynamicValue } from './dynamic-value'
 import { Mode } from './types'
 
 type Style = ViewStyle | TextStyle | ImageStyle
@@ -20,14 +19,29 @@ export type DynamicImageStyle = DynamicStyle<ImageStyle>
 function parseStylesFor<T extends DynamicStyles<T>>(styles: T, mode: Mode): NormalizeStyles<T> {
 	const newStyles: IndexedObject<IndexedObject<ValueOf<ValueOf<T>>>> = {}
 
+	let containsDynamicValues = false
+
 	for (const i in styles) {
 		const style = styles[i]
-		const newStyle: IndexedObject<ValueOf<ValueOf<T>>> = {}
+		type Value = ValueOf<ValueOf<T>>
+		const newStyle: IndexedObject<Value> = {}
 		for (const i in style) {
 			const value = style[i]
-			newStyle[i] = value instanceof DynamicValue ? value[mode] : value
+
+			if (value instanceof DynamicValue) {
+				containsDynamicValues = true
+				newStyle[i] = value[mode]
+			} else {
+				newStyle[i] = value as Value
+			}
 		}
 		newStyles[i] = newStyle
+	}
+
+	if (!containsDynamicValues && __DEV__) {
+		console.warn(
+			'A DynamicStyleSheet was used without any DynamicValues. Consider replacing with a regular StyleSheet.',
+		)
 	}
 
 	return (newStyles as unknown) as NormalizeStyles<T>
@@ -43,7 +57,4 @@ export class DynamicStyleSheet<T extends DynamicStyles<T>> {
 	}
 }
 
-export function useDynamicStyleSheet<T>(dynamicStyleSheet: DynamicStyleSheet<T>): NormalizeStyles<T> {
-	const mode = useColorSchemeContext()
-	return dynamicStyleSheet[mode]
-}
+export const useDynamicStyleSheet = useDynamicValue
