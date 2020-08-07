@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"postinstall": "is-macos && pod install || true",
+		"postinstall": "pod-install",
 		"android": "react-native run-android",
 		"ios": "react-native run-ios",
 		"start": "react-native start"
@@ -15,6 +15,6 @@
 	},
 	"devDependencies": {
 		"@types/react": "^16.9.38",
-		"is-macos": "^0.0.1"
+		"pod-install": "^0.1.9"
 	}
 }

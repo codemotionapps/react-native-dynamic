@@ -4,6 +4,12 @@ import { IndexedObject, ValueOf } from 'toolkit.ts'
 import { DynamicValue, useDynamicValue } from './dynamic-value'
 import { Mode } from './types'
 
+declare const process: {
+	env: {
+		NODE_ENV: string
+	}
+}
+
 type Style = ViewStyle | TextStyle | ImageStyle
 
 type DynamicStyle<T extends Style> = { [Key in keyof T]: T[Key] | DynamicValue<T[Key]> }
@@ -38,7 +44,7 @@ function parseStylesFor<T extends DynamicStyles<T>>(styles: T, mode: Mode): Norm
 		newStyles[i] = newStyle
 	}
 
-	if (!containsDynamicValues && __DEV__) {
+	if (!containsDynamicValues && process.env.NODE_ENV !== 'production') {
 		console.warn(
 			'A DynamicStyleSheet was used without any DynamicValues. Consider replacing with a regular StyleSheet.',
 		)
