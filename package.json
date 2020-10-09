@@ -19,6 +19,14 @@
 		"library": "yarn workspace library",
 		"start": "yarn workspace example start"
 	},
+	"prettier": {
+		"semi": false,
+		"trailingComma": "all",
+		"tabWidth": 4,
+		"printWidth": 120,
+		"singleQuote": true,
+		"useTabs": true
+	},
 	"devDependencies": {
 		"@babel/core": "^7.10.3",
 		"@babel/runtime": "^7.10.3",

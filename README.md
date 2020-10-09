@@ -1,9 +1,11 @@
-# react-native-dynamic
+<p align="center"><img src="https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/.vscode/logo.png" alt="Logo" width="128" height="128"></p>
 
-[![npm version](https://img.shields.io/npm/v/react-native-dynamic.svg)](https://www.npmjs.com/package/react-native-dynamic)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+<h1 align="center">react-native-dynamic</h1>
 
-<p align="center"><img src="https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/showcase.ios.gif" alt="Showcase iOS" width="200" height="433">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/showcase.android.gif" alt="Showcase Android" width="234" height="433"></p>
+<p align="center"><a href="https://www.npmjs.com/package/react-native-dynamic"><img src="https://img.shields.io/npm/v/react-native-dynamic.svg" alt="npm version"></a>
+<a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a></p>
+
+<p align="center">&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/.vscode/showcase.ios.gif" alt="Showcase iOS" width="200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/.vscode/showcase.android.gif" alt="Showcase Android" width="234">&nbsp;&nbsp;</p>
 
 ## Installation
 
