@@ -48,6 +48,7 @@ function parseStylesFor<T extends DynamicStyles<T>>(styles: T, mode: Mode): Norm
 		console.warn(
 			'A DynamicStyleSheet was used without any DynamicValues. Consider replacing with a regular StyleSheet.',
 		)
+		console.trace()
 	}
 
 	return (newStyles as unknown) as NormalizeStyles<T>
