@@ -1,6 +1,9 @@
 {
 	"extends": "../tsconfig.base.json",
 	"compilerOptions": {
+		"lib": ["dom", "esnext"],
+		"module": "esnext",
+		"esModuleInterop": true,
 		"declaration": true,
 		"incremental": true,
 		"sourceMap": true,
@@ -8,8 +11,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"react": ["../example/node_modules/react"]
-		}
+		},
+		"types": ["jest", "@testing-library/jest-native"]
 	},
-	"exclude": ["**/*.spec.tsx"],
-	"include": ["./src"]
+	"include": ["**/*.spec.tsx", "**/*.spec.ts"]
 }

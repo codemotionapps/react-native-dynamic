@@ -17,6 +17,7 @@
 	"scripts": {
 		"example": "yarn workspace example",
 		"library": "yarn workspace library",
+		"test": "yarn workspace library test",
 		"start": "yarn workspace example start"
 	},
 	"prettier": {
